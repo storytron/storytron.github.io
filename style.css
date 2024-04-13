@@ -1,0 +1,100 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 330px 440px 440px 220px 500px 440px;
+    /*grid-template-columns: minmax(439px, 440px);*/
+    /*grid-template-columns: repeat(4, 1fr);*/
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 10px;
+}
+
+.wrapper div {
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#label-storyworld-name {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#list-commands-area {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+}
+
+#list-area {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+}
+
+#list-of-storylets {
+    width: 290px;
+}
+
+#edit-field-area {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    /*font-size: 14px;*/
+}
+
+#variable-commands-area {
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 1;
+}
+
+#edit-variable-area {
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+}
+
+#actor-branching-commands-area {
+    grid-column: 4 / span 1;
+    grid-row: 1 / span 1;
+}
+
+#actor-branching-area {
+    grid-column: 4 / span 1;
+    grid-row: 2 / span 1;
+}
+
+#list-of-branches {
+    width: 180px;
+}
+
+#player-commands-area {
+    grid-column: 5 / span 1;
+    grid-row: 1 / span 1;
+}
+
+#player-area {
+    grid-column: 5 / span 1;
+    grid-row: 2 / span 1;
+}
+
+#json-commands-area {
+    grid-column: 6 / span 1;
+    grid-row: 1 / span 1;
+}
+
+#created-json-area {
+    grid-column: 6 / span 1;
+    grid-row: 2 / span 1;
+}
+
+textarea {
+    resize: none;
+    overflow-y: scroll;
+  }
+
+.edit-field {
+
+}
+
+*:disabled {
+    background-color: lightgray;
+    color: white;
+}

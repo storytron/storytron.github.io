@@ -1,18 +1,79 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>Storytron</title>
+        <link rel="stylesheet" href="style.css">
     </head>
-
-<body>
-    Storytron 2.0 - <i>Coming Soon</i><p>
-    <img src="storytron-030924-0.png" width="1025" height="804">
-    <script>
-
-    </script>
-</body>
-
+    <body>
+        <input id="storyworld-name" type="text" size="90" placeholder="Storyworld Name">
+        <button id="download-storyworld type="button" onclick="downloadStoryworld()">Download Storyworld</button> 
+        <button id="upload-storyworld" type="button" onclick="uploadStoryworld()">Upload Storyworld</button> |
+        <button id="save-storyworld" type="button" disabled>Save Storyworld</button>
+        <button id="load-storyworld" type="button" disabled>Load Storyworld</button> |
+        <button id="load-sample-storyworld" type="button" onclick="loadSampleStoryworld()">Load Sample Storyworld</button></p>
+        <div class="wrapper">
+            <div id="list-commands-area">
+                <button id="move-storylet-up" type="button" onclick="moveStoryletUp()" disabled>&#x25B2;</button>
+                <button id="move-storylet-down" type="button" onclick="moveStoryletDown()" disabled>&#x25BC;</button>
+                <button id="delete-storylet" type="button" disabled>Delete</button>
+            </div>
+            <div id="list-area">
+                STORYLETS</p>
+                <select id="list-of-storylets" size="35"></select>
+            </div>
+            <div id="storylet-commands-area">
+                <button id="new-storylet" type="button" onclick="newStorylet()">New</button>
+                <button id="edit-storylet" type="button" onclick="editStorylet()">Edit</button>
+                <button id="save-storylet" type="button" disabled onclick="saveStorylet()">Save</button>
+            </div>
+            <div id="edit-field-area">
+                STORYLET</p>
+                Title<br>
+                <textarea id="title" class="edit-field" rows="1" cols="50"></textarea></p>
+                Text<br>
+                <textarea id="text" class="edit-field" rows="5" cols="50"></textarea></p>
+                Response 1<br>
+                <textarea id="response-1" class="edit-field" rows="3" cols="50"></textarea></p>
+                Reaction 1<br>
+                <textarea id="reaction-1" class="edit-field" rows="3" cols="50"></textarea></p>
+                Response 2<br>
+                <textarea id="response-2" class="edit-field" rows="3" cols="50"></textarea></p>
+                Reaction 2<br>
+                <textarea id="reaction-2" class="edit-field" rows="3" cols="50"></textarea></p>
+                Response 3<br>
+                <textarea id="response-3" class="edit-field" rows="3" cols="50"></textarea></p>
+                Reaction 3<br>
+                <textarea id="reaction-3" class="edit-field" rows="3" cols="50"></textarea></p>
+            </div>
+            <div id="variable-commands-area"></div>
+            <div id="edit-variable-area">
+                STORYLET VARIABLES</p>
+            </div>
+            <div id="actor-branching-commands-area"></div>
+            <div id="actor-branching-area">
+                STORYLET BRANCHING</p>
+                <select id="list-of-branches" size="28">
+                    <option selected="selected">NEXT STORYLET IN LIST</option>
+                </select></p>
+                <button id="calculate-branching" type="button" disabled>Calculate Branching</button></p>
+                <!--ACTOR</p>
+                <select id="list-of-actors">
+                    <option selected="selected">NONE</option>
+                </select>-->
+            </div>
+            <div id="player-commands-area"></div>
+            <div id="player-area">
+                STORYWORLD PLAYER</p>
+            </div>
+            <!--<div id="json-commands-area">
+                <button id="create-json" type="button" disabled onclick="createJson()">Create JSON</button>
+            </div>
+            <div id="created-json-area">
+                CONSOLE</p>
+                <textarea id="display-json" rows="43" cols="50" readonly></textarea>
+            </div>-->
+        </div>
+    <script type="text/javascript" src="storytron.js"></script>
+    </body>
 </html>
-

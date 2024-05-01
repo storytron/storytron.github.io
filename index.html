@@ -6,17 +6,19 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <h1 id="application-name">Storytron 2</h1>
         <input id="storyworld-name" type="text" size="90" placeholder="Storyworld Name">
         <button id="download-storyworld type="button" onclick="downloadStoryworld()">Download Storyworld</button> 
         <button id="upload-storyworld" type="button" onclick="uploadStoryworld()">Upload Storyworld</button> |
-        <button id="save-storyworld" type="button" disabled>Save Storyworld</button>
-        <button id="load-storyworld" type="button" disabled>Load Storyworld</button> |
-        <button id="load-sample-storyworld" type="button" onclick="loadSampleStoryworld()">Load Sample Storyworld</button> | v0.1</p>
+        <!--<button id="save-storyworld" type="button" disabled>Save Storyworld</button>
+        <button id="load-storyworld" type="button" disabled>Load Storyworld</button>|--> 
+        <button id="load-sample-storylets" type="button" onclick="loadSampleStoryworld()">Load Sample Storylets</button> 
+        <!--<button id="load-sample-storyworld" type="button" disabled onclick="loadSampleStoryworld()">Load Sample Storyworld</button>--> | v0.2</p>
         <div class="wrapper">
             <div id="list-commands-area">
                 <button id="move-storylet-up" type="button" onclick="moveStoryletUp()" disabled>&#x25B2;</button>
                 <button id="move-storylet-down" type="button" onclick="moveStoryletDown()" disabled>&#x25BC;</button>
-                <button id="delete-storylet" type="button" disabled>Delete</button>
+                <button id="delete-storylet" type="button" onclick="deleteStorylet()" disabled>Delete</button>
             </div>
             <div id="list-area">
                 STORYLETS</p>
@@ -30,26 +32,26 @@
             <div id="edit-field-area">
                 STORYLET</p>
                 Title<br>
-                <textarea id="title" class="edit-field" rows="1" cols="50"></textarea></p>
+                <textarea id="storylet-editor-title" class="edit-field" rows="1" cols="50"></textarea></p>
                 Text<br>
-                <textarea id="text" class="edit-field" rows="5" cols="50"></textarea></p>
+                <textarea id="storylet-editor-text" class="edit-field" rows="5" cols="50"></textarea></p>
                 Response 1<br>
-                <textarea id="response-1" class="edit-field" rows="3" cols="50"></textarea></p>
+                <textarea id="storylet-editor-response-1" class="edit-field" rows="3" cols="50"></textarea></p>
                 Reaction 1<br>
-                <textarea id="reaction-1" class="edit-field" rows="3" cols="50"></textarea></p>
+                <textarea id="storylet-editor-reaction-1" class="edit-field" rows="3" cols="50"></textarea></p>
                 Response 2<br>
-                <textarea id="response-2" class="edit-field" rows="3" cols="50"></textarea></p>
+                <textarea id="storylet-editor-response-2" class="edit-field" rows="3" cols="50"></textarea></p>
                 Reaction 2<br>
-                <textarea id="reaction-2" class="edit-field" rows="3" cols="50"></textarea></p>
+                <textarea id="storylet-editor-reaction-2" class="edit-field" rows="3" cols="50"></textarea></p>
                 Response 3<br>
-                <textarea id="response-3" class="edit-field" rows="3" cols="50"></textarea></p>
+                <textarea id="storylet-editor-response-3" class="edit-field" rows="3" cols="50"></textarea></p>
                 Reaction 3<br>
-                <textarea id="reaction-3" class="edit-field" rows="3" cols="50"></textarea></p>
+                <textarea id="storylet-editor-reaction-3" class="edit-field" rows="3" cols="50"></textarea></p>
             </div>
-            <div id="variable-commands-area"></div>
+            <!--<div id="variable-commands-area"></div>
             <div id="edit-variable-area">
                 STORYLET VARIABLES</p>
-            </div>
+            </div>-->
             <div id="actor-branching-commands-area"></div>
             <div id="actor-branching-area">
                 STORYLET BRANCHING</p>
@@ -62,9 +64,24 @@
                     <option selected="selected">NONE</option>
                 </select>-->
             </div>
-            <div id="player-commands-area"></div>
+            <div id="player-commands-area">
+                <select id="player-command-menu" onchange="previewOrPlay()">
+                    <option selected="selected">Preview</option>
+                    <option>Play</option>
+                </select>
+                <text id="player-messages"></text>
+            </div>
             <div id="player-area">
-                STORYWORLD PLAYER</p>
+                <text id="player-title">STORYLET PREVIEW</text>
+                <div>
+                    <p id="storylet-player-text"></p>
+                    <a id="next-link" href="#" style="display: none">Next</a>
+                    <br>
+                    <br>
+                    <p><a id="storylet-player-response-1" href="#"></a></p>
+                    <p><a id="storylet-player-response-2" href="#"></a></p>
+                    <p><a id="storylet-player-response-3" href="#"></a></p>
+                </div>
             </div>
             <!--<div id="json-commands-area">
                 <button id="create-json" type="button" disabled onclick="createJson()">Create JSON</button>

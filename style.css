@@ -1,8 +1,7 @@
 .wrapper {
     display: grid;
-    grid-template-columns: 330px 440px 440px 220px 500px 440px;
-    /*grid-template-columns: minmax(439px, 440px);*/
-    /*grid-template-columns: repeat(4, 1fr);*/
+    /* grid-template-columns: 330px 440px 440px 220px 500px 440px; */ /* Use when Variable area is displayed */
+    grid-template-columns: 330px 440px 220px 500px 500px 440px; /* Use when Variable area is hidden */
     grid-template-rows: repeat(1, 1fr);
     grid-gap: 10px;
 }
@@ -38,7 +37,6 @@
 #edit-field-area {
     grid-column: 2 / span 1;
     grid-row: 2 / span 1;
-    /*font-size: 14px;*/
 }
 
 #variable-commands-area {
@@ -52,12 +50,14 @@
 }
 
 #actor-branching-commands-area {
-    grid-column: 4 / span 1;
+    /* grid-column: 4 / span 1; */ /* Use when Variable area is displayed */
+    grid-column: 3 / span 1; /* Use when Variable area is hidden */
     grid-row: 1 / span 1;
 }
 
 #actor-branching-area {
-    grid-column: 4 / span 1;
+    /* grid-column: 4 / span 1; */ /* Use when Variable area is displayed */
+    grid-column: 3 / span 1; /* Use when Variable area is hidden */
     grid-row: 2 / span 1;
 }
 
@@ -66,12 +66,14 @@
 }
 
 #player-commands-area {
-    grid-column: 5 / span 1;
+    /* grid-column: 5 / span 1; */ /* Use when Variable area is displayed */
+    grid-column: 4 / span 1; /* Use when Variable area is hidden */
     grid-row: 1 / span 1;
 }
 
 #player-area {
-    grid-column: 5 / span 1;
+    /* grid-column: 5 / span 1; */ /* Use when Variable area is displayed */
+    grid-column: 4 / span 1; /* Use when Variable area is hidden */
     grid-row: 2 / span 1;
 }
 
@@ -90,11 +92,29 @@ textarea {
     overflow-y: scroll;
   }
 
-.edit-field {
+#application-name {
+    font-family: Arial, Helvetica, sans-serif; 
+}
 
+#player-messages {
+    color: red;
 }
 
 *:disabled {
     background-color: lightgray;
     color: white;
+}
+
+a:link {
+    color:#fff; 
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+a:visited {
+    color:#fff;
+}
+
+a:active {
+    color :bisque
 }

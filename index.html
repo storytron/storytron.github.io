@@ -6,14 +6,17 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1 id="application-name">Storytron 2</h1>
+        <div class="page-header">
+            <img src="masks-comedy-tragedy-0.png" alt="Comedy & Tragedy Masks">
+            <h1 id="application-name">Storytron 2</h1>
+        </div>
         <input id="storyworld-name" type="text" size="90" placeholder="Storyworld Name">
         <button id="download-storyworld type="button" onclick="downloadStoryworld()">Download Storyworld</button> 
         <button id="upload-storyworld" type="button" onclick="uploadStoryworld()">Upload Storyworld</button> |
         <!--<button id="save-storyworld" type="button" disabled>Save Storyworld</button>
         <button id="load-storyworld" type="button" disabled>Load Storyworld</button>|--> 
         <button id="load-sample-storylets" type="button" onclick="loadSampleStoryworld()">Load Sample Storylets</button> 
-        <!--<button id="load-sample-storyworld" type="button" disabled onclick="loadSampleStoryworld()">Load Sample Storyworld</button>--> | v0.2</p>
+        <!--<button id="load-sample-storyworld" type="button" disabled onclick="loadSampleStoryworld()">Load Sample Storyworld</button>--> | v0.3</p>
         <div class="wrapper">
             <div id="list-commands-area">
                 <button id="move-storylet-up" type="button" onclick="moveStoryletUp()" disabled>&#x25B2;</button>
@@ -56,7 +59,7 @@
             <div id="actor-branching-area">
                 STORYLET BRANCHING</p>
                 <select id="list-of-branches" size="28">
-                    <option selected="selected">NEXT STORYLET IN LIST</option>
+                    <option id="" selected="selected">NEXT STORYLET IN LIST</option>
                 </select></p>
                 <button id="calculate-branching" type="button" disabled>Calculate Branching</button></p>
                 <!--ACTOR</p>
@@ -69,7 +72,7 @@
                     <option selected="selected">Preview</option>
                     <option>Play</option>
                 </select>
-                <text id="player-messages"></text>
+                <span id="player-messages"></span></span>
             </div>
             <div id="player-area">
                 <text id="player-title">STORYLET PREVIEW</text>

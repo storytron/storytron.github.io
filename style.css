@@ -1,7 +1,6 @@
 .wrapper {
     display: grid;
-    /* grid-template-columns: 330px 440px 440px 220px 500px 440px; */ /* Use when Variable area is displayed */
-    grid-template-columns: 330px 440px 220px 500px 500px 440px; /* Use when Variable area is hidden */
+    grid-template-columns: 330px 440px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 440px; 
     grid-template-rows: repeat(1, 1fr);
     grid-gap: 10px;
 }
@@ -63,40 +62,36 @@
 }
 
 #actor-branching-commands-area {
-    /* grid-column: 4 / span 1; */ /* Use when Variable area is displayed */
-    grid-column: 3 / span 1; /* Use when Variable area is hidden */
+    grid-column: 4 / span 2;
     grid-row: 1 / span 1;
 }
 
 #actor-branching-area {
-    /* grid-column: 4 / span 1; */ /* Use when Variable area is displayed */
-    grid-column: 3 / span 1; /* Use when Variable area is hidden */
+    grid-column: 4 / span 2;
     grid-row: 2 / span 1;
 }
 
 #list-of-branches {
-    width: 180px;
+    width: 180px; 
 }
 
 #player-commands-area {
-    /* grid-column: 5 / span 1; */ /* Use when Variable area is displayed */
-    grid-column: 4 / span 1; /* Use when Variable area is hidden */
+    grid-column: 6 / span 4;
     grid-row: 1 / span 1;
 }
 
 #player-area {
-    /* grid-column: 5 / span 1; */ /* Use when Variable area is displayed */
-    grid-column: 4 / span 1; /* Use when Variable area is hidden */
+    grid-column: 6 / span 4;
     grid-row: 2 / span 1;
 }
 
 #json-commands-area {
-    grid-column: 6 / span 1;
+    grid-column: 10 / span 1;
     grid-row: 1 / span 1;
 }
 
 #created-json-area {
-    grid-column: 6 / span 1;
+    grid-column: 10 / span 1;
     grid-row: 2 / span 1;
 }
 
@@ -113,9 +108,26 @@ textarea {
     color: red;
 }
 
+button[disabled] {
+    background-color: lightgray;
+    color: white;
+}
+/*
+input[type="button"], :disabled {
+    background-color: lightgray;
+    color: white;
+    cursor: not-allowed;
+}
+*/
+/*
 *:disabled {
     background-color: lightgray;
     color: white;
+}
+*/
+:disabled {
+    background-color: lightgray;
+    color: black;
 }
 
 a:link {
@@ -131,3 +143,36 @@ a:visited {
 a:active {
     color :bisque
 }
+
+.hidden {
+    display: none;
+}
+
+/* Style the tabs area */
+.tabs {
+    overflow: hidden;
+    /*border: 1px solid #ccc;*/
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tabs area */
+.tabs button {
+    /*background-color: inherit;*/
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tabs button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tabs button.active {
+    background-color: #ccc;
+  }

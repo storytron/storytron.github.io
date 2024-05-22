@@ -5,7 +5,7 @@
         <title>Storytron</title>
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
+    <body onload="main()">
         <div class="page-header">
             <img src="masks-comedy-tragedy-0.png" alt="Comedy & Tragedy Masks">
             <h1 id="application-name">Storytron 2</h1>
@@ -51,10 +51,112 @@
                 Reaction 3<br>
                 <textarea id="storylet-editor-reaction-3" class="edit-field" rows="3" cols="50"></textarea></p>
             </div>
-            <!--<div id="variable-commands-area"></div>
-            <div id="edit-variable-area">
+            <div id="variable-commands-area">
+                <button id="show-hide-variables" type="button" onclick="showHideVariableColumn()">Show&nbsp;&gt;</button>
+                <button id="configure-variables" class="variableControl hidden" type="button" onclick="configureVariables()">Configure</button>
+                <button id="save-configured-variables" class="variableControl hidden" type="button" onclick="saveConfiguredVariables()" disabled>Save</button>
+            </div>
+            <div id="edit-variable-area" class="column-to-toggle">
                 STORYLET VARIABLES</p>
-            </div>-->
+                
+                <div class="tabs variableControl hidden">
+                    <button id="tab-response1" class="tabLinks variableControl hidden" onclick="selectTab('Response 1')">Response 1</button>
+                    <button id="tab-response2" class="tabLinks variableControl hidden" onclick="selectTab('Response 2')">Response 2</button>
+                    <button id="tab-response3" class="tabLinks variableControl hidden" onclick="selectTab('Response 3')">Response 3</button>
+                </div>
+    
+                <div>
+                    <input id="label-variable1" class="variableControl variable1 hidden" type="text" size="18" placeholder="Variable_1" value="Variable_1">
+                    <button id="decrement-variable1" class="variableControl variable1 hidden">&lt;</button>
+                    <button id="zero-variable1" class="variableControl variable1 hidden">0</button>
+                    <button id="increment-variable1" class="variableControl variable1 hidden">&gt;</button>
+                    <select id="decimal-variable1" class="variableControl variable1 hidden">
+                        <option>±1.0</option>
+                        <option>±0.1</option>
+                    </select>
+                    <input id="checkbox-hide-variable1" class="variableConfigControl hidden" type="checkbox">
+                    <label id="label-hide-variable1" class="variableConfigControl hidden">Hide</label>
+                    <br><br>
+                    <input id="range-variable1" class="variableControl variable1 hidden" type="range" min="-10" max="10" step="1.0" value="0">
+                    <input id="value-variable1" class="variableControl variable1 hidden" type="text" size="4">
+                </div>
+                <div>
+                    <input id="label-variable2" class="variableControl variable2 hidden" type="text" size="18" placeholder="Variable_2" value="Variable_2">
+                    <button id="decrement-variable2" class="variableControl variable2 hidden">&lt;</button>
+                    <button id="zero-variable2" class="variableControl variable2 hidden">0</button>
+                    <button id="increment-variable2" class="variableControl variable2 hidden">&gt;</button>
+                    <select id="decimal-variable2" class="variableControl variable2 hidden">
+                        <option>±1.0</option>
+                        <option>±0.1</option>
+                    </select>
+                    <input id="checkbox-hide-variable2" class="variableConfigControl hidden" type="checkbox">
+                    <label id="label-hide-variable2" class="variableConfigControl hidden">Hide</label>
+                    <br><br>
+                    <input id="range-variable2" class="variableControl variable2 hidden" type="range" min="-10" max="10" value="1.0" value="0">
+                    <input id="value-variable2" class="variableControl variable2 hidden" type="text" size="4">
+                </div>
+                <div>
+                    <input id="label-variable3" class="variableControl variable3 hidden" type="text" size="18" placeholder="Variable_3" value="Variable_3">
+                    <button id="decrement-variable3" class="variableControl variable3 hidden">&lt;</button>
+                    <button id="zero-variable3" class="variableControl variable3 hidden">0</button>
+                    <button id="increment-variable3" class="variableControl variable3 hidden">&gt;</button>
+                    <select id="decimal-variable3" class="variableControl variable3 hidden">
+                        <option>±1.0</option>
+                        <option>±0.1</option>
+                    </select>
+                    <input id="checkbox-hide-variable3" class="variableConfigControl hidden" type="checkbox">
+                    <label id="label-hide-variable3" class="variableConfigControl hidden">Hide</label>
+                    <br><br>
+                    <input id="range-variable3" class="variableControl variable3 hidden" type="range" min="-10" max="10" value="1.0" value="0">
+                    <input id="value-variable3" class="variableControl variable3 hidden" type="text" size="4"> 
+                </div>
+                <div>
+                    <input id="label-variable4" class="variableControl variable4 hidden" type="text" size="18" placeholder="Variable_4" value="Variable_4">
+                    <button id="decrement-variable4" class="variableControl variable4 hidden">&lt;</button>
+                    <button id="zero-variable4" class="variableControl variable4 hidden">0</button>
+                    <button id="increment-variable4" class="variableControl variable4 hidden">&gt;</button>
+                    <select id="decimal-variable4" class="variableControl variable4 hidden">
+                        <option>±1.0</option>
+                        <option>±0.1</option>
+                    </select>
+                    <input id="checkbox-hide-variable4" class="variableConfigControl hidden" type="checkbox">
+                    <label id="label-hide-variable4" class="variableConfigControl hidden">Hide</label>
+                    <br><br>
+                    <input id="range-variable4" class="variableControl variable4 hidden" type="range" min="-10" max="10" value="1.0" value="0">
+                    <input id="value-variable4" class="variableControl variable4 hidden" type="text" size="4">
+                </div>
+                <div>
+                    <input id="label-variable5" class="variableControl variable5 hidden" type="text" size="18" placeholder="Variable_5" value="Variable_5">
+                    <button id="decrement-variable5" class="variableControl variable5 hidden">&lt;</button>
+                    <button id="zero-variable5" class="variableControl variable5 hidden">0</button>
+                    <button id="increment-variable5" class="variableControl variable5 hidden">&gt;</button>
+                    <select id="decimal-variable5" class="variableControl variable5 hidden">
+                        <option>±1.0</option>
+                        <option>±0.1</option>
+                    </select>
+                    <input id="checkbox-hide-variable5" class="variableConfigControl hidden" type="checkbox">
+                    <label id="label-hide-variable5" class="variableConfigControl hidden">Hide</label>
+                    <br><br>
+                    <input id="range-variable5" class="variableControl variable5 hidden" type="range" min="-10" max="10" value="1.0" value="0">
+                    <input id="value-variable5" class="variableControl variable5 hidden" type="text" size="4">
+                </div>              
+                <div>
+                    <input id="label-variable6" class="variableControl variable6 hidden" type="text" size="18" placeholder="Variable_6" value="Variable_6">
+                    <button id="decrement-variable6" class="variableControl variable6 hidden">&lt;</button>
+                    <button id="zero-variable6" class="variableControl variable6 hidden">0</button>
+                    <button id="increment-variable6" class="variableControl variable6 hidden">&gt;</button>
+                    <select id="decimal-variable6" class="variableControl variable6 hidden">
+                        <option>±1.0</option>
+                        <option>±0.1</option>
+                    </select>
+                    <input id="checkbox-hide-variable6" class="variableConfigControl hidden" type="checkbox">
+                    <label id="label-hide-variable6" class="variableConfigControl hidden">Hide</label>
+                    <br><br>
+                    <input id="range-variable6" class="variableControl variable6 hidden" type="range" min="-10" max="10" value="1.0" value="0">
+                    <input id="value-variable6" class="variableControl variable6 hidden" type="text" size="4">
+                </div>
+                
+            </div>
             <div id="actor-branching-commands-area"></div>
             <div id="actor-branching-area">
                 STORYLET BRANCHING</p>

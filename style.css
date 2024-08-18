@@ -1,6 +1,6 @@
 .wrapper {
     display: grid;
-    grid-template-columns: 330px 440px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 440px; 
+    grid-template-columns: 330px 440px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px; /*440px;*/ 
     grid-template-rows: repeat(1, 1fr);
     grid-gap: 10px;
 }
@@ -71,10 +71,34 @@
     grid-row: 2 / span 1;
 }
 
-#list-of-branches {
-    width: 180px; 
+#branching-title {
+    grid-column: 4 / span 1;
+    grid-row: 2 / span 1;
+    padding: 20;
 }
 
+#list-of-branches {
+    grid-column: 4 / span 1;
+    grid-row: 2 / span 1;
+    width: 180px;
+}
+
+#branching-calculations-title {
+    grid-column: 6 / span 6;
+    grid-row: 2;
+    padding: 20;
+}
+/*
+#calculation-instructions {
+    grid-column: 6 / span 4;
+    grid-row: 2;
+}
+
+#branching-calculations-controls {
+    grid-column: 6 / span 6;
+    grid-row: 2 / span 1;
+}
+*/
 #player-commands-area {
     grid-column: 6 / span 4;
     grid-row: 1 / span 1;
@@ -175,4 +199,11 @@ a:active {
 /* Create an active/current tablink class */
 .tabs button.active {
     background-color: #ccc;
-  }
+}
+
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:white;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:white;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0lax{text-align:left;vertical-align:top}

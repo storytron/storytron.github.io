@@ -1,6 +1,6 @@
 .wrapper {
     display: grid;
-    grid-template-columns: 330px 440px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px; /*440px;*/ 
+    grid-template-columns: 330px 440px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px; /*440px;*/ 
     grid-template-rows: repeat(1, 1fr);
     grid-gap: 10px;
 }
@@ -46,39 +46,54 @@
     width: 290px;
 }
 
+#storylet-commands-area {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+}
+
 #edit-field-area {
     grid-column: 2 / span 1;
     grid-row: 2 / span 1;
 }
 
+#response-commands-area {
+    grid-column: 3 / span 4;
+    grid-row: 1 / span 1;
+}
+
+#edit-response-area {
+    grid-column: 3 / span 4;
+    grid-row: 2 / span 1;
+}
+
 #variable-commands-area {
-    grid-column: 3 / span 1;
+    grid-column: 7 / span 1;
     grid-row: 1 / span 1;
 }
 
 #edit-variable-area {
-    grid-column: 3 / span 1;
+    grid-column: 7 / span 1;
     grid-row: 2 / span 1;
 }
 
 #actor-branching-commands-area {
-    grid-column: 4 / span 2;
+    grid-column: 8 / span 2;
     grid-row: 1 / span 1;
 }
 
 #actor-branching-area {
-    grid-column: 4 / span 2;
+    grid-column: 8 / span 2;
     grid-row: 2 / span 1;
 }
 
 #branching-title {
-    grid-column: 4 / span 1;
+    grid-column: 8 / span 1;
     grid-row: 2 / span 1;
     padding: 20;
 }
 
 #list-of-branches {
-    grid-column: 4 / span 1;
+    grid-column: 8 / span 1;
     grid-row: 2 / span 1;
     width: 180px;
 }
@@ -100,12 +115,12 @@
 }
 */
 #player-commands-area {
-    grid-column: 6 / span 4;
+    grid-column: 10 / span 4;
     grid-row: 1 / span 1;
 }
 
 #player-area {
-    grid-column: 6 / span 4;
+    grid-column: 10 / span 4;
     grid-row: 2 / span 1;
 }
 

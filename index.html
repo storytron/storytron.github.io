@@ -17,11 +17,13 @@
         <button id="load-storyworld" type="button" disabled>Load Storyworld</button>|--> 
         <button id="load-sample-storylets" type="button" onclick="loadSampleStoryworld()">Load Sample Storylets</button> 
         <button id="show-documentation" type="button" onclick="showDocumentationInNewTab()">Show Documentation</button>
-        <!--<button id="load-sample-storyworld" type="button" disabled onclick="loadSampleStoryworld()">Load Sample Storyworld</button>--> | v0.5 <i>(alpha)</i></p>
+        <!--<button id="load-sample-storyworld" type="button" disabled onclick="loadSampleStoryworld()">Load Sample Storyworld</button>--> | v0.6 <i>(alpha)</i></p>
         <div class="wrapper">
             <div id="list-commands-area">
                 <button id="move-storylet-up" type="button" onclick="moveStoryletUp()" disabled>&#x25B2;</button>
                 <button id="move-storylet-down" type="button" onclick="moveStoryletDown()" disabled>&#x25BC;</button>
+                <button id="new-storylet" type="button" onclick="newStorylet()">New</button>
+                <button id="edit-storylet" type="button" onclick="editStorylet()">Edit</button>
                 <button id="delete-storylet" type="button" onclick="deleteStorylet()" disabled>Delete</button>
             </div>
             <div id="list-area">
@@ -29,31 +31,34 @@
                 <select id="list-of-storylets" size="35"></select>
             </div>
             <div id="storylet-commands-area">
-                <button id="new-storylet" type="button" onclick="newStorylet()">New</button>
-                <button id="edit-storylet" type="button" onclick="editStorylet()">Edit</button>
                 <button id="save-storylet" type="button" disabled onclick="saveStorylet()">Save</button>
+                <button id="cancel-storylet" type="button" disabled onclick="cancelStorylet()">Cancel</button>
             </div>
             <div id="edit-field-area">
                 STORYLET</p>
                 Title<br>
                 <textarea id="storylet-editor-title" class="edit-field" rows="1" cols="50"></textarea></p>
                 Text<br>
-                <textarea id="storylet-editor-text" class="edit-field" rows="5" cols="50"></textarea></p>
+                <textarea id="storylet-editor-text" class="edit-field" rows="35" cols="50"></textarea></p>
+            </div>
+            <div id="response-commands-area"></div>
+            <div id="edit-response-area">
+                RESPONSES</p>
                 Response 1<br>
-                <textarea id="storylet-editor-response-1" class="edit-field" rows="3" cols="50"></textarea></p>
+                <textarea id="storylet-editor-response-1" class="edit-field" rows="5" cols="50"></textarea></p>
                 Reaction 1<br>
-                <textarea id="storylet-editor-reaction-1" class="edit-field" rows="3" cols="50"></textarea></p>
+                <textarea id="storylet-editor-reaction-1" class="edit-field" rows="5" cols="50"></textarea></p>
                 Response 2<br>
-                <textarea id="storylet-editor-response-2" class="edit-field" rows="3" cols="50"></textarea></p>
+                <textarea id="storylet-editor-response-2" class="edit-field" rows="5" cols="50"></textarea></p>
                 Reaction 2<br>
-                <textarea id="storylet-editor-reaction-2" class="edit-field" rows="3" cols="50"></textarea></p>
+                <textarea id="storylet-editor-reaction-2" class="edit-field" rows="5" cols="50"></textarea></p>
                 Response 3<br>
-                <textarea id="storylet-editor-response-3" class="edit-field" rows="3" cols="50"></textarea></p>
+                <textarea id="storylet-editor-response-3" class="edit-field" rows="5" cols="50"></textarea></p>
                 Reaction 3<br>
-                <textarea id="storylet-editor-reaction-3" class="edit-field" rows="3" cols="50"></textarea></p>
+                <textarea id="storylet-editor-reaction-3" class="edit-field" rows="5" cols="50"></textarea></p>
             </div>
             <div id="variable-commands-area">
-                <button id="show-hide-variables" type="button" onclick="showHideVariableColumn()">Show&nbsp;&gt;</button>
+                <button id="show-hide-variables" type="button" onclick="showHideVariablesColumn()">Show&nbsp;&gt;</button>
                 <button id="configure-variables" class="variableControl hidden" type="button" onclick="configureVariables()">Configure</button>
                 <button id="save-configured-variables" class="variableControl hidden" type="button" onclick="saveConfiguredVariables()" disabled>Save</button>
             </div>
@@ -159,11 +164,11 @@
                 
             </div>
             <div id="actor-branching-commands-area">
-                <button id="show-hide-calculation" type="button" onclick="showHideCalculationArea()">Show Calculations&nbsp;&gt;</button>
+                <button id="show-hide-calculation" type="button" onclick="showHideBranchingColumn()">Show Calculations&nbsp;&gt;</button>
             </div>
             <div id="actor-branching-area"></div>
                 <div id="branching-title" class="branchingControl">BRANCHING</p>
-                    <select id="list-of-branches" size="" onchange="enableDisableShowCalculations()">
+                    <select id="list-of-branches" size="" disabled onchange="enableDisableShowCalculations()">
                         <option id="" selected="selected">NEXT STORYLET IN LIST</option>
                         <option id="">CALCULATED</option>
                     </select>
@@ -188,7 +193,7 @@
                         Each inclination equation follows this order of operations when calculating during play.</p> 
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>( A x 1ST VARiable ) + ( B x 2ND VARiable ) + ( C x 3RD VARiable )</b>  
                         <div>
-                            <table class="tg" style="width:100%">
+                            <table id="inclinationEquations" class="tg" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th class="tg-0lax" style="width:150px">STORYLET</th>
@@ -203,7 +208,7 @@
                                 <tbody>
                                     <tr height="40px">
                                         <td class="tg-0lax">
-                                            <select id="inclination-1-storylet" style="width: 150px;" onchange="storyletSelected('1')">
+                                            <select id="inclination-1-storylet" class="inclinationControl" style="width: 150px;" onchange="storyletSelected('1')">
                                             </select>
                                         </td>
                                         <td class="tg-0lax">
@@ -217,11 +222,11 @@
                                         <td class="tg-0lax">
                                             <input id="inclination-1-c" type="text" style="width:35px" disabled/>
                                         </td>
-                                        <td id="inclination-1-3rd-variable" class="tg-0lax"></td>
+                                        <td id="inclination-1-3rd-variable" class="tg-0lax inclinationControl"></td>
                                     </tr>
                                     <tr height="40px">
                                         <td class="tg-0lax">
-                                        <select id="inclination-2-storylet" style="width: 150px;" onchange="storyletSelected('2')">
+                                        <select id="inclination-2-storylet" class="inclinationControl" style="width: 150px;" onchange="storyletSelected('2')">
                                         </select>
                                         </td>
                                         <td class="tg-0lax">
@@ -239,7 +244,7 @@
                                     </tr>
                                     <tr height="40px">
                                         <td class="tg-0lax">
-                                            <select id="inclination-3-storylet" style="width: 150px;" onchange="storyletSelected('3')">
+                                            <select id="inclination-3-storylet" class="inclinationControl" style="width: 150px;" onchange="storyletSelected('3')">
                                             </select>
                                         </td>
                                         <td class="tg-0lax">
@@ -257,7 +262,7 @@
                                     </tr>
                                     <tr height="40px">
                                         <td class="tg-0lax">
-                                            <select id="inclination-4-storylet" style="width: 150px;" onchange="storyletSelected('4')">
+                                            <select id="inclination-4-storylet" class="inclinationControl" style="width: 150px;" onchange="storyletSelected('4')">
                                             </select>
                                         </td>
                                         <td class="tg-0lax">
@@ -275,7 +280,7 @@
                                     </tr>
                                     <tr height="40px">
                                         <td class="tg-0lax">
-                                            <select id="inclination-5-storylet" style="width: 150px;" onchange="storyletSelected('5')">
+                                            <select id="inclination-5-storylet" class="inclinationControl" style="width: 150px;" onchange="storyletSelected('5')">
                                             </select>
                                         </td>
                                         <td class="tg-0lax">

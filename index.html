@@ -10,14 +10,15 @@
             <img src="masks-comedy-tragedy-0.png" alt="Comedy & Tragedy Masks">
             <h1 id="application-name">Storytron 2</h1>
         </div>
-        <input id="storyworld-name" type="text" size="90" placeholder="Storyworld Name">
+        <input id="storyworld-name" type="text" size="45" placeholder="Storyworld Name">
+        <input id="storyworld-author" type="text" size="45" placeholder="Storyworld Author">
         <button id="download-storyworld" type="button" onclick="downloadStoryworld()">Download Storyworld</button> 
         <button id="upload-storyworld" type="button" onclick="uploadStoryworld()">Upload Storyworld</button> |
         <!--<button id="save-storyworld" type="button" disabled>Save Storyworld</button>
         <button id="load-storyworld" type="button" disabled>Load Storyworld</button>|--> 
         <button id="load-sample-storylets" type="button" onclick="loadSampleStoryworld()">Load Sample Storylets</button> 
         <button id="show-documentation" type="button" onclick="showDocumentationInNewTab()">Show Documentation</button>
-        <!--<button id="load-sample-storyworld" type="button" disabled onclick="loadSampleStoryworld()">Load Sample Storyworld</button>--> | v0.6 <i>(alpha)</i></p>
+        <!--<button id="load-sample-storyworld" type="button" disabled onclick="loadSampleStoryworld()">Load Sample Storyworld</button>--> | v0.7 <i>(alpha)</i></p>
         <div class="wrapper">
             <div id="list-commands-area">
                 <button id="move-storylet-up" type="button" onclick="moveStoryletUp()" disabled>&#x25B2;</button>
@@ -125,7 +126,7 @@
                         <option>±1.0</option>
                         <option>±0.1</option>
                     </select>
-                    <input id="checkbox-hide-variable4" class="variableConfigControl hidden" type="checkbox" checked>
+                    <input id="checkbox-hide-variable4" class="variableConfigControl hidden" type="checkbox">
                     <label id="label-hide-variable4" class="variableConfigControl hidden">Hide</label>
                     <br><br>
                     <input id="range-variable4" class="variableControl variable4 hidden" type="range" min="-10" max="10" value="1.0" value="0">
@@ -140,7 +141,7 @@
                         <option>±1.0</option>
                         <option>±0.1</option>
                     </select>
-                    <input id="checkbox-hide-variable5" class="variableConfigControl hidden" type="checkbox" checked>
+                    <input id="checkbox-hide-variable5" class="variableConfigControl hidden" type="checkbox">
                     <label id="label-hide-variable5" class="variableConfigControl hidden">Hide</label>
                     <br><br>
                     <input id="range-variable5" class="variableControl variable5 hidden" type="range" min="-10" max="10" value="1.0" value="0">
@@ -155,7 +156,7 @@
                         <option>±1.0</option>
                         <option>±0.1</option>
                     </select>
-                    <input id="checkbox-hide-variable6" class="variableConfigControl hidden" type="checkbox" checked>
+                    <input id="checkbox-hide-variable6" class="variableConfigControl hidden" type="checkbox">
                     <label id="label-hide-variable6" class="variableConfigControl hidden">Hide</label>
                     <br><br>
                     <input id="range-variable6" class="variableControl variable6 hidden" type="range" min="-10" max="10" value="1.0" value="0">
